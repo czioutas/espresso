@@ -10,7 +10,7 @@ const sortedReviews = reviews.sort((a: CollectionEntry<'reviews'>, b: Collection
 ---
 
 <Layout title="Espresso - Latest" currentPage="latest">
-  <main class="px-6 py-10 space-y-16 max-w-lg mx-auto">
+  <main class="px-6 py-10 space-y-16 md:space-y-24 max-w-3xl mx-auto">
     {sortedReviews.map(async (review) => {
       const { Content } = await review.render();
       return (

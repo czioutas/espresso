@@ -21,13 +21,13 @@ const { title, currentPage = "latest" } = Astro.props;
     <header class="px-6 pt-20 pb-10 bg-background-light">
       <div class="flex flex-col items-center text-center">
         <h1
-          class="text-6xl font-titan leading-none text-stone-900 tracking-tighter"
+          class="text-6xl md:text-9xl font-titan leading-none text-stone-900 tracking-tighter"
         >
           ESPRESSO
         </h1>
-        <div class="w-12 h-1 bg-stone-900 mt-6 mb-4"></div>
+        <div class="w-12 md:w-24 h-1 bg-stone-900 mt-6 mb-4"></div>
         <p
-          class="text-stone-500 text-[11px] uppercase tracking-[0.3em] font-bold"
+          class="text-stone-500 text-[11px] md:text-[15px] uppercase tracking-[0.3em] font-bold"
         >
           Highly opinionated espresso reviews. Do not trust me.
         </p>
@@ -36,10 +36,10 @@ const { title, currentPage = "latest" } = Astro.props;
 
     <nav class="sticky top-0 z-40 px-6 bg-background-light/95 backdrop-blur-md">
       <div
-        class="flex items-center justify-between border-y border-stone-200 py-4 max-w-lg mx-auto w-full"
+        class="flex items-center justify-between border-y border-stone-200 py-4 max-w-3xl mx-auto w-full"
       >
         <a
-          class={`text-[12px] font-titan uppercase tracking-wide transition-colors ${
+          class={`text-[12px] md:text-[16px] font-titan uppercase tracking-wide transition-colors ${
             currentPage === "latest"
               ? "text-stone-900"
               : "text-stone-400 hover:text-stone-900"
@@ -49,7 +49,7 @@ const { title, currentPage = "latest" } = Astro.props;
           Latest
         </a>
         <a
-          class={`text-[12px] font-titan uppercase tracking-wide transition-colors ${
+          class={`text-[12px] md:text-[16px] font-titan uppercase tracking-wide transition-colors ${
             currentPage === "ranked"
               ? "text-stone-900"
               : "text-stone-400 hover:text-stone-900"
@@ -59,7 +59,7 @@ const { title, currentPage = "latest" } = Astro.props;
           Ranked
         </a>
         <a
-          class={`text-[12px] font-titan uppercase tracking-wide transition-colors ${
+          class={`text-[12px] md:text-[16px] font-titan uppercase tracking-wide transition-colors ${
             currentPage === "about"
               ? "text-stone-900"
               : "text-stone-400 hover:text-stone-900"
