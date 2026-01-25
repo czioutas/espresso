@@ -1,0 +1,83 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  currentPage?: "latest" | "ranked" | "about";
+}
+
+const { title, currentPage = "latest" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="text-stone-800 min-h-screen">
+    <header class="px-6 pt-20 pb-10 bg-background-light">
+      <div class="flex flex-col items-center text-center">
+        <h1
+          class="text-6xl font-titan leading-none text-stone-900 tracking-tighter"
+        >
+          ESPRESSO
+        </h1>
+        <div class="w-12 h-1 bg-stone-900 mt-6 mb-4"></div>
+        <p
+          class="text-stone-500 text-[11px] uppercase tracking-[0.3em] font-bold"
+        >
+          Highly opinionated espresso reviews. Do not trust me.
+        </p>
+      </div>
+    </header>
+
+    <nav class="sticky top-0 z-40 px-6 bg-background-light/95 backdrop-blur-md">
+      <div
+        class="flex items-center justify-between border-y border-stone-200 py-4 max-w-lg mx-auto w-full"
+      >
+        <a
+          class={`text-[12px] font-titan uppercase tracking-wide transition-colors ${
+            currentPage === "latest"
+              ? "text-stone-900"
+              : "text-stone-400 hover:text-stone-900"
+          }`}
+          href="/"
+        >
+          Latest
+        </a>
+        <a
+          class={`text-[12px] font-titan uppercase tracking-wide transition-colors ${
+            currentPage === "ranked"
+              ? "text-stone-900"
+              : "text-stone-400 hover:text-stone-900"
+          }`}
+          href="/ranked"
+        >
+          Ranked
+        </a>
+        <a
+          class={`text-[12px] font-titan uppercase tracking-wide transition-colors ${
+            currentPage === "about"
+              ? "text-stone-900"
+              : "text-stone-400 hover:text-stone-900"
+          }`}
+          href="/about"
+        >
+          About
+        </a>
+      </div>
+    </nav>
+
+    <slot />
+
+    <footer class="p-12 text-center">
+      <p
+        class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.4em]"
+      >
+      </p>
+    </footer>
+  </body>
+</html>

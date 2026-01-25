@@ -1,0 +1,81 @@
+---
+import type { TasteAttribute, WeatherCondition, Mood, Location, Strength } from '../content/config';
+import { getWeatherIcon } from '../utils/weather';
+
+interface Props {
+  title: string;
+  rating: number;
+  attributes: {
+    positive: TasteAttribute[];
+    negative: TasteAttribute[];
+  };
+  strength?: Strength;
+  location?: Location;
+  mapsUrl?: string;
+  website?: string;
+  instagram?: string;
+  weather?: WeatherCondition;
+  mood?: Mood;
+}
+
+const { title, rating, attributes, strength, location, mapsUrl, website, instagram, weather, mood } = Astro.props;
+---
+
+<article class="flex flex-col">
+  <div class="flex items-baseline justify-between mb-3">
+    <h2 class="text-3xl font-titan text-stone-900 leading-none uppercase">
+      {title}
+    </h2>
+    <span class="text-2xl font-titan text-primary">{rating}</span>
+  </div>
+
+  <div class="flex flex-wrap gap-x-2 gap-y-1 mb-5">
+    {attributes.positive.map((attr) => (
+      <span class="attribute-text">(+ {attr})</span>
+    ))}
+    {attributes.positive.length > 0 && attributes.negative.length > 0 && (
+      <span class="attribute-text">/</span>
+    )}
+    {attributes.negative.map((attr) => (
+      <span class="attribute-text">(- {attr})</span>
+    ))}
+    {strength && (
+      <span class="attribute-text">— {strength}</span>
+    )}
+  </div>
+
+  <div class="text-stone-600 text-[15px] leading-relaxed font-normal mb-6">
+    <slot />
+  </div>
+
+  {(location || weather || mood || website || instagram) && (
+    <div class="pt-4 border-t border-stone-200/60 space-y-2">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-stone-400 font-bold uppercase tracking-widest">
+        {location && mapsUrl && (
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="hover:text-stone-600 transition-colors underline decoration-dotted underline-offset-2">
+            {location} ↗
+          </a>
+        )}
+        {location && !mapsUrl && <span>{location}</span>}
+        {location && weather && <span class="text-stone-300">/</span>}
+        {weather && <span>{getWeatherIcon(weather)} {weather}</span>}
+        {weather && mood && <span class="text-stone-300">/</span>}
+        {mood && <span class="italic text-stone-500">{mood}</span>}
+      </div>
+      {(website || instagram) && (
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px]">
+          {website && (
+            <a href={website} target="_blank" rel="noopener noreferrer" class="text-stone-400 hover:text-primary transition-colors font-bold uppercase tracking-widest">
+              🌐 Website
+            </a>
+          )}
+          {instagram && (
+            <a href={`https://instagram.com/${instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer" class="text-stone-400 hover:text-primary transition-colors font-bold uppercase tracking-widest">
+              📷 @{instagram.replace('@', '')}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  )}
+</article>

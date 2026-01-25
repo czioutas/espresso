@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ranked Espresso List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d17a22",
+                        "accent": "#000000",
+                        "background-light": "#fcf9f2",
+                        "card-light": "#ffffff",
+                        "border-light": "#efede7"
+                    },
+                    fontFamily: {
+                        "display": ["Titan One", "cursive"],
+                        "sans": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background-light');
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-titan {
+            font-family: 'Titan One', cursive;
+        }
+        .attribute-text {
+            @apply text-[10px] font-bold tracking-[0.1em] text-stone-900;
+        }
+        .rank-number {
+            @apply text-stone-300 text-5xl font-titan opacity-40;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-stone-800 min-h-screen">
+<header class="px-6 pt-20 pb-10 bg-background-light">
+<div class="flex flex-col items-center text-center">
+<h1 class="text-6xl font-titan leading-none text-stone-900 tracking-tighter uppercase">Ranked</h1>
+<div class="w-12 h-1 bg-stone-900 mt-6 mb-4"></div>
+<p class="text-stone-500 text-[11px] uppercase tracking-[0.3em] font-bold">Berlin Micro-Blog</p>
+</div>
+</header>
+<nav class="sticky top-0 z-40 px-6 bg-background-light/95 backdrop-blur-md">
+<div class="flex items-center justify-between border-y border-stone-200 py-4 max-w-lg mx-auto w-full">
+<a class="text-stone-400 text-[12px] font-titan uppercase tracking-wide hover:text-stone-900 transition-colors" href="#">Latest</a>
+<a class="text-stone-900 text-[12px] font-titan uppercase tracking-wide" href="#">Ranked</a>
+<a class="text-stone-400 text-[12px] font-titan uppercase tracking-wide hover:text-stone-900 transition-colors" href="#">About</a>
+</div>
+</nav>
+<main class="px-6 py-10 space-y-12 max-w-lg mx-auto">
+<article class="flex items-start gap-6">
+<div class="rank-number shrink-0 pt-1">01</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="text-3xl font-titan text-stone-900 leading-none uppercase">Five Elephant</h2>
+<span class="text-2xl font-titan text-primary">9.2</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1">
+<span class="attribute-text">(+ SILKY)</span>
+<span class="attribute-text">(+ STONE FRUIT)</span>
+<span class="attribute-text">(- WATERY)</span>
+</div>
+</div>
+</article>
+<article class="flex items-start gap-6">
+<div class="rank-number shrink-0 pt-1">02</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="text-3xl font-titan text-stone-900 leading-none uppercase">The Barn</h2>
+<span class="text-2xl font-titan text-primary">8.9</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1">
+<span class="attribute-text">(+ ACIDIC)</span>
+<span class="attribute-text">(+ FLORAL)</span>
+<span class="attribute-text">(- SOUR)</span>
+</div>
+</div>
+</article>
+<article class="flex items-start gap-6">
+<div class="rank-number shrink-0 pt-1">03</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="text-3xl font-titan text-stone-900 leading-none uppercase">Distrikt</h2>
+<span class="text-2xl font-titan text-primary">8.5</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1">
+<span class="attribute-text">(+ CHOCOLATE)</span>
+<span class="attribute-text">(+ HEAVY)</span>
+<span class="attribute-text">(- ACIDITY)</span>
+</div>
+</div>
+</article>
+<article class="flex items-start gap-6">
+<div class="rank-number shrink-0 pt-1">04</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="text-3xl font-titan text-stone-900 leading-none uppercase">Bonanza</h2>
+<span class="text-2xl font-titan text-primary">8.1</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1">
+<span class="attribute-text">(+ CREAMY)</span>
+<span class="attribute-text">(+ NUTTY)</span>
+<span class="attribute-text">(- BITTER)</span>
+</div>
+</div>
+</article>
+<article class="flex items-start gap-6">
+<div class="rank-number shrink-0 pt-1">05</div>
+<div class="flex-1">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="text-3xl font-titan text-stone-900 leading-none uppercase">19 Grams</h2>
+<span class="text-2xl font-titan text-primary">7.8</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1">
+<span class="attribute-text">(+ TOASTY)</span>
+<span class="attribute-text">(+ CARAMEL)</span>
+<span class="attribute-text">(- ASHY)</span>
+</div>
+</div>
+</article>
+</main>
+<footer class="p-12 text-center">
+<p class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.4em]">End of Rankings</p>
+</footer>
+
+</body></html>

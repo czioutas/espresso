@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Typographic Attribute Feed Variant 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d17a22",
+                        "accent": "#000000",
+                        "background-light": "#fcf9f2",
+                        "card-light": "#ffffff",
+                        "border-light": "#efede7"
+                    },
+                    fontFamily: {
+                        "display": ["Titan One", "cursive"],
+                        "sans": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background-light');
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-titan {
+            font-family: 'Titan One', cursive;
+        }
+        .attribute-text {
+            @apply text-[10px] font-bold tracking-[0.1em] text-stone-900;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-stone-800 min-h-screen">
+<header class="px-6 pt-20 pb-10 bg-background-light">
+<div class="flex flex-col items-center text-center">
+<h1 class="text-6xl font-titan leading-none text-stone-900 tracking-tighter">ESPRESSO</h1>
+<div class="w-12 h-1 bg-stone-900 mt-6 mb-4"></div>
+<p class="text-stone-500 text-[11px] uppercase tracking-[0.3em] font-bold">Berlin Micro-Blog</p>
+</div>
+</header>
+<nav class="sticky top-0 z-40 px-6 bg-background-light/95 backdrop-blur-md">
+<div class="flex items-center justify-between border-y border-stone-200 py-4">
+<a class="text-stone-900 text-[12px] font-titan uppercase tracking-wide" href="#">Latest</a>
+<a class="text-stone-400 text-[12px] font-titan uppercase tracking-wide hover:text-stone-900 transition-colors" href="#">Ranked</a>
+<a class="text-stone-400 text-[12px] font-titan uppercase tracking-wide hover:text-stone-900 transition-colors" href="#">About</a>
+</div>
+</nav>
+<main class="px-6 py-10 space-y-16 max-w-lg mx-auto">
+<article class="flex flex-col">
+<div class="flex items-baseline justify-between mb-3">
+<h2 class="text-3xl font-titan text-stone-900 leading-none">THE BARN</h2>
+<span class="text-2xl font-titan text-primary">8.9</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1 mb-5">
+<span class="attribute-text">(+ ACIDIC)</span>
+<span class="attribute-text">(+ FLORAL)</span>
+<span class="attribute-text">(- SOUR)</span>
+<span class="attribute-text">[LIGHT ROAST]</span>
+</div>
+<p class="text-stone-600 text-[15px] leading-relaxed font-normal mb-6">
+                The espresso is as sharp as the Berlin winter air. Witty, acidic, and unapologetically bold. A masterclass in minimalist roasting.
+            </p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-stone-400 font-bold uppercase tracking-widest pt-4 border-t border-stone-200/60">
+<span>Mitte</span>
+<span class="text-stone-300">/</span>
+<span>4°C Overcast</span>
+<span class="text-stone-300">/</span>
+<span class="italic text-stone-500">Melancholic</span>
+</div>
+</article>
+<article class="flex flex-col">
+<div class="flex items-baseline justify-between mb-3">
+<h2 class="text-3xl font-titan text-stone-900 leading-none">FIVE ELEPHANT</h2>
+<span class="text-2xl font-titan text-primary">9.2</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1 mb-5">
+<span class="attribute-text">(+ SILKY)</span>
+<span class="attribute-text">(+ STONE FRUIT)</span>
+<span class="attribute-text">(- WATERY)</span>
+</div>
+<p class="text-stone-600 text-[15px] leading-relaxed font-normal mb-6">
+                Cheesecake is the bait, but the light roast is the hook. Smooth vibes even when the sky is grey. Delicate profile cutting through the drizzle.
+            </p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-stone-400 font-bold uppercase tracking-widest pt-4 border-t border-stone-200/60">
+<span>Kreuzberg</span>
+<span class="text-stone-300">/</span>
+<span>6°C Drizzle</span>
+<span class="text-stone-300">/</span>
+<span class="italic text-stone-500">Focused</span>
+</div>
+</article>
+<article class="flex flex-col">
+<div class="flex items-baseline justify-between mb-3">
+<h2 class="text-3xl font-titan text-stone-900 leading-none">BONANZA</h2>
+<span class="text-2xl font-titan text-primary">8.1</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1 mb-5">
+<span class="attribute-text">(+ CREAMY)</span>
+<span class="attribute-text">(+ NUTTY)</span>
+<span class="attribute-text">(- BITTER)</span>
+</div>
+<p class="text-stone-600 text-[15px] leading-relaxed font-normal mb-6">
+                Old school spirit in a new school vessel. Rich, creamy, and slightly rebellious. Perfect for people-watching on a Tuesday.
+            </p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-stone-400 font-bold uppercase tracking-widest pt-4 border-t border-stone-200/60">
+<span>Prenz. Berg</span>
+<span class="text-stone-300">/</span>
+<span>2°C Foggy</span>
+<span class="text-stone-300">/</span>
+<span class="italic text-stone-500">Reflective</span>
+</div>
+</article>
+<article class="flex flex-col">
+<div class="flex items-baseline justify-between mb-3">
+<h2 class="text-3xl font-titan text-stone-900 leading-none">DISTRIKT</h2>
+<span class="text-2xl font-titan text-primary">8.5</span>
+</div>
+<div class="flex flex-wrap gap-x-2 gap-y-1 mb-5">
+<span class="attribute-text">(+ CHOCOLATE)</span>
+<span class="attribute-text">(+ HEAVY)</span>
+<span class="attribute-text">(- ACIDITY)</span>
+</div>
+<p class="text-stone-600 text-[15px] leading-relaxed font-normal mb-6">
+                Deep, dark, and dependable. Like a well-worn leather jacket. It hits the palate with a purposeful weight that anchors the morning.
+            </p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-stone-400 font-bold uppercase tracking-widest pt-4 border-t border-stone-200/60">
+<span>Mitte</span>
+<span class="text-stone-300">/</span>
+<span>3°C Sunny</span>
+<span class="text-stone-300">/</span>
+<span class="italic text-stone-500">Resolute</span>
+</div>
+</article>
+</main>
+<footer class="p-12 text-center">
+<p class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.4em]">End of Archive</p>
+</footer>
+
+</body></html>

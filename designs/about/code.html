@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About - Berlin Espresso Micro-Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d17a22",
+                        "accent": "#000000",
+                        "background-light": "#fcf9f2",
+                        "card-light": "#ffffff",
+                        "border-light": "#efede7"
+                    },
+                    fontFamily: {
+                        "display": ["Titan One", "cursive"],
+                        "sans": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background-light');
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-titan {
+            font-family: 'Titan One', cursive;
+        }
+        .attribute-text {
+            @apply text-[11px] font-bold tracking-[0.1em] text-stone-900;
+        }
+        .section-title {
+            @apply text-xl font-titan text-stone-900 mt-12 mb-4 uppercase;
+        }
+        .body-copy {
+            @apply text-stone-600 text-[16px] leading-relaxed font-normal mb-6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-stone-800 min-h-screen">
+<header class="px-6 pt-20 pb-10 bg-background-light">
+<div class="flex flex-col items-center text-center">
+<h1 class="text-6xl font-titan leading-none text-stone-900 tracking-tighter uppercase">About</h1>
+<div class="w-12 h-1 bg-stone-900 mt-6 mb-4"></div>
+<p class="text-stone-500 text-[11px] uppercase tracking-[0.3em] font-bold">Berlin Micro-Blog</p>
+</div>
+</header>
+<nav class="sticky top-0 z-40 px-6 bg-background-light/95 backdrop-blur-md">
+<div class="flex items-center justify-between border-y border-stone-200 py-4">
+<a class="text-stone-400 text-[12px] font-titan uppercase tracking-wide hover:text-stone-900 transition-colors" href="#">Latest</a>
+<a class="text-stone-400 text-[12px] font-titan uppercase tracking-wide hover:text-stone-900 transition-colors" href="#">Ranked</a>
+<a class="text-stone-900 text-[12px] font-titan uppercase tracking-wide" href="#">About</a>
+</div>
+</nav>
+<main class="px-6 py-10 max-w-lg mx-auto">
+<section>
+<h2 class="section-title">The Philosophy</h2>
+<p class="body-copy">
+                This is not a directory. It’s a diary of caffeine-induced revelations across Berlin. In a city where every street corner claims to have the "best" light roast, I seek the truth in the bottom of a 30ml cup. 
+            </p>
+<p class="body-copy">
+                Coffee is subjective. It’s a collision of chemistry, weather, and whether or not the person behind the counter looked at you with mild Berlin-flavored disdain.
+            </p>
+</section>
+<section>
+<h2 class="section-title">The Attributes</h2>
+<p class="body-copy">
+                To keep things plain, I use a purely typographic system to categorize the taste profile. No icons, no color-coding—just the facts.
+            </p>
+<div class="space-y-6 bg-white/50 p-6 border border-stone-200 rounded-sm">
+<div class="flex flex-col gap-2">
+<span class="attribute-text">(+ POSITIVE)</span>
+<p class="text-xs text-stone-500 leading-tight">Attributes wrapped in parentheses with a plus indicate qualities that define the excellence of the cup. (e.g., (+ SILKY)).</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="attribute-text">(- NEGATIVE)</span>
+<p class="text-xs text-stone-500 leading-tight">Attributes with a minus are the detractors—the notes that pulled the score down. (e.g., (- BITTER)).</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="attribute-text">[CONTEXT]</span>
+<p class="text-xs text-stone-500 leading-tight">Brackets denote roast style or specific bean origins that set the stage.</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="section-title">The Variables</h2>
+<p class="body-copy">
+                An 8.9 in the Mitte sunshine is a 7.2 in a Neukölln downpour. My reviews always account for:
+            </p>
+<ul class="space-y-4 border-l-2 border-stone-200 pl-4 py-2">
+<li class="text-sm font-bold text-stone-800 uppercase tracking-wider">
+                    Weather
+                    <span class="block font-normal normal-case text-stone-500 mt-1">Temperature and humidity change how we perceive acidity. Fog calls for body; sun calls for citrus.</span>
+</li>
+<li class="text-sm font-bold text-stone-800 uppercase tracking-wider">
+                    Mood
+                    <span class="block font-normal normal-case text-stone-500 mt-1">If I'm <span class="italic text-stone-600">Melancholic</span>, I want a heavy, comforting chocolate. If I'm <span class="italic text-stone-600">Focused</span>, give me that sharp, electric fruit.</span>
+</li>
+</ul>
+</section>
+<section class="mt-16 pt-10 border-t border-stone-200 text-center">
+<p class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.4em] mb-4">Stay Caffeinated</p>
+<p class="text-xs text-stone-500 italic">"Good coffee is a human right. Great coffee is a miracle."</p>
+</section>
+</main>
+<footer class="p-12 text-center">
+<p class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.4em]">Berlin / 2024</p>
+</footer>
+
+</body></html>
