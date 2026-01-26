@@ -76,6 +76,7 @@ const Location = z.enum([
   'Treptow',
   'Lichtenberg',
   'Pankow',
+  'Etna',
 ]);
 
 const Strength = z.enum([
@@ -86,6 +87,51 @@ const Strength = z.enum([
   'Strong',
 ]);
 
+const Country = z.enum([
+  'DE', // Germany
+  'IT', // Italy
+  'GR', // Greece
+  'FR', // France
+  'ES', // Spain
+  'PT', // Portugal
+  'NL', // Netherlands
+  'BE', // Belgium
+  'AT', // Austria
+  'CH', // Switzerland
+  'UK', // United Kingdom
+  'US', // United States
+  'CA', // Canada
+  'AU', // Australia
+  'JP', // Japan
+  'KR', // South Korea
+  'TH', // Thailand
+  'VN', // Vietnam
+  'TR', // Turkey
+  'MX', // Mexico
+  'BR', // Brazil
+  'AR', // Argentina
+  'CO', // Colombia
+]);
+
+const Atmosphere = z.enum([
+  'Cozy',
+  'Minimalist',
+  'Busy',
+  'Intimate',
+  'Industrial',
+  'Hipster',
+  'Traditional',
+  'Modern',
+  'Rustic',
+  'Sleek',
+  'Warm',
+  'Cold',
+  'Vibrant',
+  'Quiet',
+  'Lively',
+  'Casual',
+]);
+
 const reviews = defineCollection({
   type: 'content',
   schema: z.object({
@@ -93,15 +139,17 @@ const reviews = defineCollection({
     rating: z.number().min(0).max(10),
     attributes: z.object({
       positive: z.array(TasteAttribute).min(1),
-      negative: z.array(TasteAttribute).min(1),
+      negative: z.array(TasteAttribute).min(0),
     }),
     strength: Strength,
     location: Location,
+    country: Country,
     mapsUrl: z.string().url(),
     website: z.string().url().optional(),
     instagram: z.string().optional(),
     weather: WeatherCondition,
     mood: Mood,
+    atmosphere: Atmosphere,
     date: z.date(),
   }),
 });
@@ -116,3 +164,5 @@ export type WeatherCondition = z.infer<typeof WeatherCondition>;
 export type Mood = z.infer<typeof Mood>;
 export type Location = z.infer<typeof Location>;
 export type Strength = z.infer<typeof Strength>;
+export type Country = z.infer<typeof Country>;
+export type Atmosphere = z.infer<typeof Atmosphere>;

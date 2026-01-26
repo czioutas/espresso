@@ -1,5 +1,5 @@
 ---
-import type { TasteAttribute, WeatherCondition, Mood, Location, Strength } from '../content/config';
+import type { TasteAttribute, WeatherCondition, Mood, Location, Strength, Atmosphere } from '../content/config';
 import { getWeatherIcon } from '../utils/weather';
 
 interface Props {
@@ -16,12 +16,23 @@ interface Props {
   instagram?: string;
   weather?: WeatherCondition;
   mood?: Mood;
+  atmosphere?: Atmosphere;
+  date?: Date;
 }
 
-const { title, rating, attributes, strength, location, mapsUrl, website, instagram, weather, mood } = Astro.props;
+const { title, rating, attributes, strength, location, mapsUrl, website, instagram, weather, mood, atmosphere, date } = Astro.props;
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+};
 ---
 
 <article class="flex flex-col">
+  {date && (
+    <div class="text-[10px] text-stone-400 font-bold uppercase tracking-[0.2em] mb-2">
+      {formatDate(date)}
+    </div>
+  )}
   <div class="flex items-baseline justify-between mb-3">
     <h2 class="text-3xl md:text-5xl font-titan text-stone-900 leading-none uppercase">
       {title}
