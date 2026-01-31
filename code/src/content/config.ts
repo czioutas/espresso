@@ -3,36 +3,12 @@ import { defineCollection, z } from 'astro:content';
 // Define strict enums for attributes
 const TasteAttribute = z.enum([
   // Positive attributes
-  'ACIDIC',
-  'FLORAL',
-  'SILKY',
-  'STONE FRUIT',
-  'CREAMY',
-  'NUTTY',
-  'CHOCOLATE',
-  'HEAVY',
-  'TOASTY',
-  'CARAMEL',
-  'FRUITY',
-  'BRIGHT',
-  'CITRUS',
-  'BERRY',
-  'WINEY',
-  'SPICY',
-  'EARTHY',
   'SMOOTH',
-  'BALANCED',
-  'COMPLEX',
+  'LIGHT',
+  'CLEAN',
   // Negative attributes
-  'SOUR',
-  'WATERY',
-  'BITTER',
-  'ACIDITY',
-  'ASHY',
-  'BURNT',
-  'FLAT',
-  'HARSH',
-  'METALLIC',
+  'BLAND',
+  'NO_AROMA',
 ]);
 
 const WeatherCondition = z.enum([
@@ -47,18 +23,8 @@ const WeatherCondition = z.enum([
 ]);
 
 const Mood = z.enum([
-  'Melancholic',
-  'Focused',
-  'Reflective',
-  'Resolute',
-  'Nostalgic',
-  'Contemplative',
   'Energetic',
-  'Calm',
-  'Anxious',
-  'Joyful',
-  'Pensive',
-  'Restless',
+  'Hopeful',
 ]);
 
 const Location = z.enum([

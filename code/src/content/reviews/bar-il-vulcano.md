@@ -2,7 +2,7 @@
 title: "Bar Il Vulcano"
 rating: 9.8
 attributes:
-  positive: ["SMOOTH", "EARTHY", "BRIGHT", "COMPLEX"]
+  positive: ["SMOOTH"]
   negative: []
 strength: "Normal"
 location: "Etna"
