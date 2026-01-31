@@ -7,7 +7,7 @@ attributes:
 strength: "Normal"
 location: "Friedrichshain"
 country: "DE"
-mapsUrl: "https://www.facebook.com/aprilkindberlin/"
+mapsUrl: "https://maps.app.goo.gl/sWJuR1aRBnFCG4s68"
 weather: "Sunny"
 mood: "Normal"
 atmosphere: "Packed"
