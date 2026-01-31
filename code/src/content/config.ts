@@ -9,6 +9,8 @@ const TasteAttribute = z.enum([
   // Negative attributes
   'BLAND',
   'NO_AROMA',
+  'BITTER',
+  'DARK',
 ]);
 
 const WeatherCondition = z.enum([
@@ -25,6 +27,7 @@ const WeatherCondition = z.enum([
 const Mood = z.enum([
   'Energetic',
   'Hopeful',
+  'Normal',
 ]);
 
 const Location = z.enum([
@@ -96,6 +99,7 @@ const Atmosphere = z.enum([
   'Quiet',
   'Lively',
   'Casual',
+  'Packed',
 ]);
 
 const reviews = defineCollection({
@@ -104,7 +108,7 @@ const reviews = defineCollection({
     title: z.string(),
     rating: z.number().min(0).max(10),
     attributes: z.object({
-      positive: z.array(TasteAttribute).min(1),
+      positive: z.array(TasteAttribute).min(0),
       negative: z.array(TasteAttribute).min(0),
     }),
     strength: Strength,

@@ -18,9 +18,10 @@ interface Props {
   mood?: Mood;
   atmosphere?: Atmosphere;
   date?: Date;
+  slug?: string;
 }
 
-const { title, rating, attributes, strength, location, mapsUrl, website, instagram, weather, mood, atmosphere, date } = Astro.props;
+const { title, rating, attributes, strength, location, mapsUrl, website, instagram, weather, mood, atmosphere, date, slug } = Astro.props;
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -53,7 +54,13 @@ const showMetadata = metadataItems.length > 0 || website || instagram;
   )}
   <div class="flex items-baseline justify-between mb-3">
     <h2 class="text-3xl md:text-5xl font-titan text-stone-900 leading-none uppercase">
-      {title}
+      {slug ? (
+        <a href={`/reviews/${slug}`} class="hover:text-primary transition-colors">
+          {title}
+        </a>
+      ) : (
+        title
+      )}
     </h2>
     <span class="text-2xl md:text-4xl font-titan text-primary">{rating}</span>
   </div>

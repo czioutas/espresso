@@ -27,6 +27,7 @@ const sortedReviews = reviews.sort((a: CollectionEntry<'reviews'>, b: Collection
           mood={review.data.mood}
           atmosphere={review.data.atmosphere}
           date={review.data.date}
+          slug={review.id}
         >
           <Content />
         </ReviewCard>

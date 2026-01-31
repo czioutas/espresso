@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ReviewCard from '../../components/ReviewCard.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const reviews = await getCollection('reviews');
+  return reviews.map((review) => ({
+    params: { slug: review.id },
+    props: { review },
+  }));
+}
+
+interface Props {
+  review: CollectionEntry<'reviews'>;
+}
+
+const { review } = Astro.props;
+const { Content } = await review.render();
+---
+
+<Layout title={`${review.data.title} - Espresso`} currentPage="latest">
+  <main class="px-6 py-10 max-w-3xl mx-auto">
+    <a href="/" class="inline-block text-sm text-stone-400 hover:text-stone-600 transition-colors mb-8 font-bold uppercase tracking-widest">
+      ← Back to all reviews
+    </a>
+
+    <ReviewCard
+      title={review.data.title}
+      rating={review.data.rating}
+      attributes={review.data.attributes}
+      strength={review.data.strength}
+      location={review.data.location}
+      mapsUrl={review.data.mapsUrl}
+      website={review.data.website}
+      instagram={review.data.instagram}
+      weather={review.data.weather}
+      mood={review.data.mood}
+      atmosphere={review.data.atmosphere}
+      date={review.data.date}
+    >
+      <Content />
+    </ReviewCard>
+  </main>
+</Layout>
