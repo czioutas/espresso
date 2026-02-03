@@ -46,6 +46,7 @@ const Location = z.enum([
   'Lichtenberg',
   'Pankow',
   'Etna',
+  'Thessaloniki',
 ]);
 
 const Strength = z.enum([
